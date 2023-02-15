@@ -5,7 +5,8 @@
   ansible.builtin.package:
     name: 'epel-release'
     state: 'present'
-  when: 'ansible_distribution == "CentOS"'
+  when:
+    - 'ansible_distribution == "CentOS"'
   notify:
     - 'CentOS - install epel-release key'
     - "run 'yum makecache fast'"
