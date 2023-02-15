@@ -2,7 +2,7 @@
 # CentOS_install_epel-release/tasks/main.yml
 
 - name: 'CentOS - install package epel-release'
-  yum:
+  ansible.builtin.package:
     name: 'epel-release'
     state: 'present'
   when: 'ansible_distribution == "CentOS"'
