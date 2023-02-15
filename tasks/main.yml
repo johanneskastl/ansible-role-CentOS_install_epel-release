@@ -12,4 +12,5 @@
     - "run 'yum makecache fast'"
     - "run 'dnf makecache'"
 
-- meta: flush_handlers
+- name: 'Flush handlers'
+  ansible.builtin.meta: flush_handlers
