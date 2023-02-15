@@ -7,14 +7,8 @@
     state: 'present'
   when: 'ansible_distribution == "CentOS"'
   notify:
+    - 'CentOS - install epel-release key'
     - "run 'yum makecache fast'"
     - "run 'dnf makecache'"
-
-- name: 'CentOS - install epel-release key'
-  rpm_key:
-    key: '/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}'
-    state: 'present'
-  when: 'ansible_distribution == "CentOS"'
-  ignore_errors: "{{ ansible_check_mode |default(false)}}"
 
 - meta: flush_handlers

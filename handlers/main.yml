@@ -1,6 +1,13 @@
 ---
 # CentOS_install_epel-release/handlers/main.yml
 
+- name: 'CentOS - install epel-release key'
+  rpm_key:
+    key: '/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}'
+    state: 'present'
+  when:
+    - 'ansible_distribution == "CentOS"'
+
 - name: "Run 'yum makecache fast'"
   command: "yum makecache fast"
   when:
