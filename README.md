@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-        - { role: 'johanneskastl.CentOS_install_epel-release' }
+        - role: 'johanneskastl.CentOS_install_epel-release'
 
 License
 -------
