@@ -1,3 +1,5 @@
+![Ansible Lint](https://github.com/johanneskastl/ansible-role-CentOS_install_epel-release/workflows/Ansible%20Lint/badge.svg)
+
 CentOS_install_epel-release
 =========
 
